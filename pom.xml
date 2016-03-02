@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.berryjam</groupId>
-    <artifactId>adx-gate-web</artifactId>
+    <artifactId>blog-web</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>adx-gate-web Maven Webapp</name>
+    <name>blog Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
-        <project.output.name>adx-gate-web</project.output.name>
+        <project.output.name>blog-web</project.output.name>
         <spring.version>3.1.2.RELEASE</spring.version>
     </properties>
 
@@ -19,6 +19,18 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
         </dependency>
 
         <!-- spring dependencies -->
@@ -141,6 +153,12 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.9</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>package</defaultGoal>
@@ -193,7 +211,7 @@
                     <!-- specify run port, default is 8080 -->
                     <connectors>
                         <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8182</port>
+                            <port>8020</port>
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
@@ -206,8 +224,8 @@
                     <contextHandlers>
 
                         <contextHandler implementation="org.mortbay.jetty.webapp.WebAppContext">
-                            <resourceBase>../smart-admin</resourceBase>
-                            <contextPath>/static</contextPath>
+                            <resourceBase>/Users/berryjam/WebstormProjects/startbootstrap-clean-blog</resourceBase>
+                            <contextPath>/blog</contextPath>
                         </contextHandler>
                     </contextHandlers>
                 </configuration>

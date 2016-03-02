@@ -19,18 +19,14 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:/spring-servlet.xml</param-value>
+            <param-value>classpath*:/applicationContext*.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>spring</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
     <!-- Character Encoding filter -->
