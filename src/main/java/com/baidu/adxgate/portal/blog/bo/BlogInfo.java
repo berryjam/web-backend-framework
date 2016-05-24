@@ -2,8 +2,6 @@ package com.baidu.adxgate.portal.blog.bo;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
-import java.util.Date;
-
 /**
  * 博客bo
  *
@@ -12,25 +10,22 @@ import java.util.Date;
  * @time 下午9:07
  */
 public class BlogInfo {
-
     @JsonProperty("blogtitle")
     private String title;
-
     @JsonProperty("blogsubtitle")
     private String subtitle;
-
     @JsonProperty("author")
     private String author;
-
     @JsonProperty("createtime")
     private String createTime;
-
     @JsonProperty("modtime")
     private String modTIme;
 
+    public BlogInfo() {
+    }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -38,7 +33,7 @@ public class BlogInfo {
     }
 
     public String getSubtitle() {
-        return subtitle;
+        return this.subtitle;
     }
 
     public void setSubtitle(String subtitle) {
@@ -46,7 +41,7 @@ public class BlogInfo {
     }
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
     public void setAuthor(String author) {
@@ -54,7 +49,7 @@ public class BlogInfo {
     }
 
     public String getCreateTime() {
-        return createTime;
+        return this.createTime;
     }
 
     public void setCreateTime(String createTime) {
@@ -62,10 +57,14 @@ public class BlogInfo {
     }
 
     public String getModTIme() {
-        return modTIme;
+        return this.modTIme;
     }
 
     public void setModTIme(String modTIme) {
         this.modTIme = modTIme;
+    }
+
+    public String toString() {
+        return "BlogInfo{title=\'" + this.title + '\'' + ", subtitle=\'" + this.subtitle + '\'' + ", author=\'" + this.author + '\'' + ", createTime=\'" + this.createTime + '\'' + ", modTIme=\'" + this.modTIme + '\'' + '}';
     }
 }
